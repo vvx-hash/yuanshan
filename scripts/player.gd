@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 @export var speed := 180.0
 
-func _physics_process(delta):
-	var dir = Vector2.ZERO
-	dir.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	dir.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	velocity = dir.normalized() * speed
+@onready var avatar: Sprite2D = $Avatar
+
+func _physics_process(_delta: float) -> void:
+	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	velocity = direction * speed
+	if absf(velocity.x) > 1.0:
+		avatar.flip_h = velocity.x < 0.0
 	move_and_slide()

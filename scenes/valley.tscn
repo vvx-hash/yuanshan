@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/valley.gd" id="1_valley"]
+[ext_resource type="PackedScene" path="res://scenes/cabin.tscn" id="2_cabin"]
+
+[node name="Valley" type="Node2D"]
+script = ExtResource("1_valley")
+
+[node name="Cabin" parent="." instance=ExtResource("2_cabin")]
+position = Vector2(1160, 350)
