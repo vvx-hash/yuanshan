@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/cabin.gd" id="1_cabin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cabin"]
+size = Vector2(268, 158)
+
+[node name="Cabin" type="Node2D"]
+z_index = 1
+script = ExtResource("1_cabin")
+
+[node name="BuildingCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingCollision"]
+shape = SubResource("RectangleShape2D_cabin")

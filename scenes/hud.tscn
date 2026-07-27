@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="ColorRect" parent="."]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 390.0
+offset_bottom = 66.0
+color = Color(0.12, 0.18, 0.15, 0.88)
+mouse_filter = 2
+
+[node name="Day" type="Label" parent="TopBar"]
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 112.0
+offset_bottom = 38.0
+text = "第 1 天"
+
+[node name="Time" type="Label" parent="TopBar"]
+offset_left = 132.0
+offset_top = 12.0
+offset_right = 222.0
+offset_bottom = 38.0
+text = "07:00"
+
+[node name="Weather" type="Label" parent="TopBar"]
+offset_left = 262.0
+offset_top = 12.0
+offset_right = 348.0
+offset_bottom = 38.0
+text = "晴朗"
+horizontal_alignment = 2
+
+[node name="Help" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 678.0
+offset_right = 500.0
+offset_bottom = 708.0
+text = "方向键移动  ·  Enter 摸猫  ·  Tab 背包  ·  F9 保存  ·  F10 读档"
+theme_override_colors/font_color = Color(1, 1, 1, 0.72)
+
+[node name="InventoryPanel" type="Panel" parent="."]
+visible = false
+offset_left = 930.0
+offset_top = 86.0
+offset_right = 1250.0
+offset_bottom = 470.0
+
+[node name="Title" type="Label" parent="InventoryPanel"]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 296.0
+offset_bottom = 54.0
+text = "背包"
+theme_override_font_sizes/font_size = 24
+
+[node name="Divider" type="HSeparator" parent="InventoryPanel"]
+offset_left = 24.0
+offset_top = 62.0
+offset_right = 296.0
+offset_bottom = 66.0
+
+[node name="Items" type="Label" parent="InventoryPanel"]
+offset_left = 24.0
+offset_top = 84.0
+offset_right = 296.0
+offset_bottom = 350.0
+text = "背包还是空的"
+
+[node name="Message" type="Label" parent="."]
+visible = false
+offset_left = 440.0
+offset_top = 620.0
+offset_right = 840.0
+offset_bottom = 662.0
+text = "游戏已保存"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 0.94, 0.72, 1)
+theme_override_font_sizes/font_size = 20
